@@ -66,30 +66,38 @@ const product=[
     "images":[
     "https://i.dummyjson.com/data/products/5/3.jpg"]},
     ]
+   
+    let container = document.getElementById('container');
+    container.className="d-flex flex-wrap justify-content-around";
+    let card,image,title, content, button;
+    container.style.gap='20px';
+    product.forEach((element)=>{
+        card  = document.createElement('div');
+        card.className="card";
+        card.style.width='18%';
+        
+        image= document.createElement('img');
+        image.src=element.thumbnail;
+        image.style.height='100%';
+        card.append(image);
 
+        title = document.createElement('h5');
+        title.className="card-title";
+        title.innerHTML = element.title;
+        card.append(title);
+
+        content = document.createElement('p');
+        content.className="card-text";
+        content.innerHTML=element.description;
+        card.append(content);
+
+        button = document.createElement('button');
+        button.className='btn btn-primary';
+        button.innerHTML = "View Product";
+        card.append(button);
+
+        container.append(card);
+    });
     
-    const container =document.getElementById('container')
-    const card=document.createElement('div')
-        card.className='card'
-        card.style.width='18rem'
-    product.forEach((Data)=>{
-        
-        
-        const image =document.createElement('img')
-        image.src=Data.images
-        const body=document.createElement('div')
-        body.className='card-body'
-        const title=document.createElement('h5')
-        title.className='card-title'
-        title.innerHTML=Data.title
-        const description=document.createElement('p')
-        description.className='card-text'
-        description.innerHTML=Data.description
-        const button=document.createElement('a')
-        button.className='btn btn-primary'
-        button.innerHTML='View product'
-        card.append(image,body,title,description,button)
-       
-    })
-    container.append(card)
+
   
