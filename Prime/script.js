@@ -1,6 +1,6 @@
 let num = prompt("Enter a number");
 let intNum = parseInt(num);
-let count;
+let count=0;
 for(let i =1; i<=intNum; i++){
     if(intNum % i == 0){
        count++;
