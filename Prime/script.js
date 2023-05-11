@@ -1,9 +1,9 @@
 let num = prompt("Enter a number");
-let intNum = Number(num);
-
+let intNum = parseInt(num);
+let count;
 for(let i =1; i<=intNum; i++){
     if(intNum % i == 0){
-       var count=count+1;
+       count++;
     }
 }
 console.log(count);
